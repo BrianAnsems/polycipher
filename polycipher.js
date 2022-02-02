@@ -13,7 +13,7 @@ var PageManager = {
 			$.ajax({
 				success: function()
 				{
-					var pText = document.getElementById("plaintext").value.toLowerCase();
+					var pText = document.getElementById("message").value.toLowerCase();
 					var wKey = document.getElementById("wordkey").value.toLowerCase();
 					var eText = function(text){
 						var code = "";
@@ -29,7 +29,6 @@ var PageManager = {
 							for(var a=0;a<alphabet.length;a++)
 							{
 								cipherAlphabet["wCipher"+t].push(alphabet[a]);
-
 							}								
 							console.log(cipherAlphabet["wCipher"+t]);
 
@@ -66,7 +65,6 @@ var PageManager = {
 							{
 								code = code+text[i];
 								f--;
-
 							}
 							else{ciphered=false;}
 							f=f+1;
