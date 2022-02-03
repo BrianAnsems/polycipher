@@ -18,7 +18,7 @@ function encipherText(){
 				cipherAlphabet["wCipher"+t].push(alphabet[a]);
 			}
 
-			while(cipherAlphabet["wCipher"+t][0]!=wKey.charAt(t))
+			while(cipherAlphabet["wCipher"+t][0]!==wKey.charAt(t))
 			{
 				let letter = cipherAlphabet["wCipher"+t].pop();
 				cipherAlphabet["wCipher"+t].unshift(letter);
@@ -30,7 +30,7 @@ function encipherText(){
 		for(let i=0;i<text.length;i++)
 		{
 			let ciphered = false;
-			if(text[i]==" ")
+			if(text[i]===" ")
 			{
 				code = code+" ";
 				ciphered=true;
@@ -39,27 +39,25 @@ function encipherText(){
 			for(let k=0;k<alphabet.length;k++)
 			{
 
-				if(text[i]==alphabet[k])
+				if(text[i]===alphabet[k])
 				{
 					code = code+cipherAlphabet["wCipher"+f][k];
 					ciphered=true;
 				}
 			}
-			if(ciphered==false)
+			if(ciphered===false)
 			{
 				code = code+text[i];
 				f--;
 			}
 			else{ciphered=false;}
 			f=f+1;
-			if(f==wKey.length)
+			if(f===wKey.length)
 			{
 				f=0;
 			}
 		}
 		return code;
 	};
-	let codeText = eText(pText);
-
-	document.getElementById("encipheredText").innerHTML = codeText;
+	document.getElementById("encipheredText").innerHTML = eText(pText);
 }
